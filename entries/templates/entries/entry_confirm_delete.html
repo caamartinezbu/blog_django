@@ -1,0 +1,21 @@
+{% extends 'entries/base.html' %}
+{% block content %} 
+<form action="" method="POST">
+    {% csrf_token %}
+    <p>
+        Estas seguro que quieres borrarlarlo? <br>
+       <p> <em>{{ entry.title }}</em></p>
+        Creado en {{ entry.data_created|date:'Y-m-d'}}?
+    </p>
+    <input type="submit" value="Confirm">
+</form>
+<a href="{% url 'entry-detail' entry.id %}" >
+    <button>Cancel</button>
+</a>
+
+
+{% endblock  %} 
+
+
+
+
